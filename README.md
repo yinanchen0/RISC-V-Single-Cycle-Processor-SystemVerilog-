@@ -1,38 +1,37 @@
-# SystemVerilog CPU Design
+# SystemVerilog CPU Datapath Design
 
-This repository contains the design and verification of a simple CPU implemented in
-**SystemVerilog**. The project focuses on modular hardware design and simulation-based
-verification, with each major component implemented and tested independently.
+This repository contains a **modular CPU datapath implementation** written in
+**SystemVerilog**, developed as an academic digital hardware design project.
+The design demonstrates how instructions are **fetched, decoded, and executed
+in simulation** using standard CPU building blocks.
 
-## Overview
-The CPU is composed of standard datapath and control components, including an ALU,
-control unit, register file, program counter, and instruction memory. Individual
-testbenches are provided to verify the functionality of each module as well as the
-integrated CPU.
+## What This Project Does
+- Implements core CPU components (ALU, register file, PC, control logic)
+- Integrates modules into a functional CPU datapath
+- Executes instructions in **simulation**
+- Verifies correctness using dedicated **SystemVerilog testbenches**
 
-## Architecture
-Main modules included in this project:
-- **ALU** – Arithmetic and logic operations
-- **Control Unit** – Instruction decoding and control signal generation
-- **Register File** – Register read/write operations
-- **Program Counter (PC)** – Instruction sequencing
-- **Instruction Memory** – Instruction storage and fetch
-- **Top-level CPU** – Integration of all modules
+The project outcome is a **working, simulatable CPU design**, validated through
+waveform-based verification.
 
-## Verification
-Each hardware module is verified using a dedicated SystemVerilog testbench:
-- `alu_tb.sv`
-- `control_unit_tb.sv`
-- `reg_file_tb.sv`
-- `PC_tb.sv`
-- `instruction_memory_tb.sv`
-- `cpu_tb.sv`
+## CPU Block Diagram (Conceptual)
+At a high level, the CPU operates as follows:
+1. The **Program Counter (PC)** supplies an address to instruction memory
+2. **Instruction Memory** outputs the current instruction
+3. The **Control Unit** decodes the instruction into control signals
+4. The **Register File** provides operands to the datapath
+5. The **ALU** performs arithmetic or logic operations
+6. Results are written back to the register file
+7. The PC updates to fetch the next instruction
 
-Simulation waveforms were used to confirm correct functional behavior.
+This reflects a standard **single-cycle CPU datapath structure** used in
+introductory processor design.
 
 ## File Structure
-src/ # CPU and datapath modules (.sv)
-tb/ # Testbenches (.sv)
+-src/ # SystemVerilog CPU modules (ALU, PC, control, register file, etc.)
+-tb/ # Testbenches for individual modules and integrated CPU
+-programs/ # Example instruction/program files
+-README.md
 
 ## Tools
 - SystemVerilog
@@ -42,5 +41,3 @@ tb/ # Testbenches (.sv)
 ## Notes
 This project was developed as an educational CPU design exercise, with emphasis on
 clean modular design and verification rather than performance optimization.
-
-
