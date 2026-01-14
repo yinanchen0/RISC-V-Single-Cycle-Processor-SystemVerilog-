@@ -28,10 +28,11 @@ This reflects a standard **single-cycle CPU datapath structure** used in
 introductory processor design.
 
 ## File Structure
--src/ # SystemVerilog CPU modules (ALU, PC, control, register file, etc.)
--tb/ # Testbenches for individual modules and integrated CPU
--programs/ # Example instruction/program files
--README.md
+- src/        # SystemVerilog CPU modules (ALU, PC, control, register file, etc.)
+- tb/         # Testbenches for individual modules and integrated CPU
+- programs/   # Example instruction/program files
+- README.md
+
 
 ## Tools
 - SystemVerilog
